@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lavalink4NET.DiscordNet", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lavalink4NET.DSharpPlus", "Lavalink4NET.DSharpPlus\Lavalink4NET.DSharpPlus.csproj", "{3A39C12E-7FE0-406B-A369-73DC91C4DD5B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lavalink4NET.MemoryCache", "Lavalink4NET.MemoryCache\Lavalink4NET.MemoryCache.csproj", "{0A74B051-3BC6-424E-B5A1-30EF2FAC7CFA}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lavalink4NET.Tests", "Lavalink4NET.Tests\Lavalink4NET.Tests.csproj", "{C5360CAD-5276-48B2-832E-665015793D91}"
 EndProject
 Global
