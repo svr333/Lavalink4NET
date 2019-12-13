@@ -97,13 +97,15 @@ namespace Lavalink4NET.DSharpPlus
         /// </returns>
         public async Task<IEnumerable<ulong>> GetChannelUsersAsync(ulong guildId, ulong voiceChannelId)
         {
+            /* I should also not be needing this.
             var guild = await _client.GetGuildAsync(guildId)
                 ?? throw new ArgumentException("Invalid or inaccessible guild: " + guildId, nameof(guildId));
 
             var channel = guild.GetChannel(voiceChannelId)
                 ?? throw new ArgumentException("Invalid or inaccessible voice channel: " + voiceChannelId, nameof(voiceChannelId));
 
-            return channel.Users.Select(s => s.Id);
+            return channel.Users.Select(s => s.Id);*/
+            return null;
         }
 
         /// <summary>
@@ -170,16 +172,18 @@ namespace Lavalink4NET.DSharpPlus
         /// <returns>a task that represents the asynchronous operation</returns>
         private Task OnVoiceStateUpdated(global::DSharpPlus.EventArgs.VoiceStateUpdateEventArgs eventArgs)
         {
+            /* I should not be needing this
             // create voice states
             var oldVoiceState = eventArgs.Before?.Channel is null ? null : new VoiceState(
-                eventArgs.Before.Channel.Id, eventArgs.Before.Guild.Id, eventArgs.Before.GetSessionId());
+                eventArgs.Channel.Id, eventArgs.Guild.Id, eventArgs.Before.GetSessionId());
 
             var voiceState = eventArgs.After?.Channel is null ? null : new VoiceState(
-                eventArgs.After.Channel.Id, eventArgs.After.Guild.Id, eventArgs.After.GetSessionId());
+                eventArgs.Channel.Id, eventArgs.Guild.Id, eventArgs.After.GetSessionId());
 
             // invoke event
             return VoiceStateUpdated.InvokeAsync(this,
-                new Events.VoiceStateUpdateEventArgs(eventArgs.User.Id, voiceState, oldVoiceState));
+                new Events.VoiceStateUpdateEventArgs(eventArgs.User.Id, voiceState, oldVoiceState));*/
+            return Task.CompletedTask;
         }
     }
 }
